@@ -1,0 +1,58 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    background: teal;
+    padding: 15px;
+  }
+  .container img {
+    width: 300px;
+    height: 300px;
+    display: block;
+    transition: all 100ms ease-out;
+  }
+  .container img:hover{
+    transform: scale(1.04);
+  }
+
+  
+
+  .imgBox{
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+  .bottomDescription {
+    position: absolute; 
+    margin-top: -19%;
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1; 
+    width: 290px;
+    opacity:1;
+    color: white;
+    font-size: 10px;
+    padding: 5px;
+    text-align: center;
+    height: 50px;
+    overflow: hidden;
+
+  }
+
+  .searchBar{
+    height: 10vh;
+    background-color: cadetblue;
+    color: white;
+  }
+
+  .loading{
+    align-content: center;
+  }
+
+ .select-dropdown{
+  width: 5em;
+  height: 1.8em;
+  line-height: 3;
+  font-size: 1.2em;
+  margin: 2px;
+ }
