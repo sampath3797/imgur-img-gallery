@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/imgur-img-gallery/static/css/main.bdfab52a.css",
+    "main.js": "/imgur-img-gallery/static/js/main.28416e6a.js",
+    "static/js/787.2c7287f1.chunk.js": "/imgur-img-gallery/static/js/787.2c7287f1.chunk.js",
+    "index.html": "/imgur-img-gallery/index.html",
+    "main.bdfab52a.css.map": "/imgur-img-gallery/static/css/main.bdfab52a.css.map",
+    "main.28416e6a.js.map": "/imgur-img-gallery/static/js/main.28416e6a.js.map",
+    "787.2c7287f1.chunk.js.map": "/imgur-img-gallery/static/js/787.2c7287f1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bdfab52a.css",
+    "static/js/main.28416e6a.js"
+  ]
+}
