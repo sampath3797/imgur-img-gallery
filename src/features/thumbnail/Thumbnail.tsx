@@ -128,21 +128,21 @@ export class Thumbnail extends React.Component<{},state>{
                       <form id="filter" onSubmit={this.handleSubmit}>
                         
                       <label>Section:</label>
-                    <select id="section" name="section" className="select-dropdown" >
+                    <select role="section" id="section" name="section" className="select-dropdown" >
                         <option value='hot'>Hot</option>
                         <option value='top'>Top</option>
                         <option value='user'>User</option>
                     </select>
                     &nbsp;&nbsp;&nbsp;
                     <label>Sort:</label>
-                    <select id="sort" name="sort" className="select-dropdown">
+                    <select role="sort" id="sort" name="sort" className="select-dropdown">
                         <option value='viral'>Viral</option>
                         <option value='top'>Top</option>
                         <option value='time'>Time</option>
                     </select>
                     &nbsp;&nbsp;&nbsp;
                     <label>Window:</label>
-                    <select id="wndow" name="wndow" className="select-dropdown">
+                    <select role="wndow" id="wndow" name="wndow" className="select-dropdown">
                     <option value="day">Day</option>
                     <option value="week">Week</option>
                     <option value="month">Month</option>
@@ -164,7 +164,7 @@ export class Thumbnail extends React.Component<{},state>{
                             {this.state.resImageData.map(x => 
                             <div className='imgBox'>
                             <img  src={x.link} alt="image"/>
-                            <div className='bottomDescription'>Sampath - {x.description}</div>
+                            <div className='bottomDescription'>{x.description}</div>
                             </div>
                             )}
                         
