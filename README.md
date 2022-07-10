@@ -1,46 +1,74 @@
-# Getting Started with Create React App
+# IMGUR GALLERY
+`IMGUR GALLERY` This application facilitates Browsing Imgur Gallery Images. User can filter images as per section like hot, top, user and user can sort images like viral, top and time, similarly user can select window like day, week, month, year , all. The image resource api is provided by api.imgur.com
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
 
-## Available Scripts
+Contents
+========
 
-In the project directory, you can run:
+ * [Why?](#why)
+ * [Technology used](#Technology-used)
+ * [Installation](#installation)
+ * [Usage](#usage)
+ * [Test and Build](#test-build)
+ * [Git Integration](#git-integration)
+ * [Configuration](#configuration)
+ * [Output Structure](#output-structure)
+ * [Future Planning](#future-planning)
 
-### `npm start`
+### Why?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I wanted a simple web application that allows user to:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
++ Browse images.
++ Browse images based on section by selecting the section drop down values like hot, top, user.
++ Browse images based on sort by selecting the sort drop down values like viral, top, time.
++ Browse images based on window by selecting the window drop down values like day, week, month, year, all.
++ Load Images Button provided, so that once combination of drop down selection was made then click on this button to load images accordingly.
 
-### `npm test`
+### Technology used
++ React
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+####  Install From GIT Repository
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+> git clone https://github.com/sampath3797/imgur-img-gallery.git
+> cd imgur-gallery
+> npm install
+```
+once all npm packages are installed then give npm start to run app in development mode.
 
-### `npm run eject`
+### Usage
+---
+Access the url `https://sampath3797.github.io/imgur-img-gallery/`  in browser to open the application.
+By default section selected as hot, sort selected as top, window selected as day. Hence as per the default selected values the application loads images. After that user can change the selection of section, sort and window as required and click on `Load Images` button to load images.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Git Integration
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This web application tool is git-integrated for easy to share among developers and maintain, This repository having a `.gitignore` file. It excludes `node_modules`, `.angular` etc which are not required for tracking and sync with github remote repository.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Configuration
+1. client-id registered with imgur.com is stored in http-common.ts file. Incase of any changes update this accordingly. This client-id is required for accessing API ENDPOINT with header key - value pair as `Authorization` - `Client-ID <REGISTERED_CLIENTID>`
+2. API_END POINT are stored in http-common.ts file.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+#### .gitignore
+node_modules folders are ignored
+
+
+
+
+
+### Future Planning
+---
+Performance Improvement: The Imgur API supports ETags, which allows the API to signal to developers whether or not data from previous queries have changed. For next time calling same URL Route include the header If-None-Match with value as ETag, If the data changed then api will respond with fresh data otherwise it will return response code 304(Not Modified) and no data will be returned. Hence if there is no change then load from cache or NgRx store(If state management implemented) with previous data.
+
+
