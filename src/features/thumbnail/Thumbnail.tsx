@@ -8,7 +8,6 @@ import Box from '@mui/material/Box';
 export interface state {
   isFetching: boolean;
   resImageData: imageData[];
-  query: {section: string; sort: string; wndow: string}
 }
 
 export class Thumbnail extends React.Component<{},state>{
@@ -19,18 +18,21 @@ export class Thumbnail extends React.Component<{},state>{
 
     constructor(props: any) {
         super(props);
+        
+        // initializing state
         this.state = {
           isFetching: false,
-          resImageData: [],
-          query: {section: 'hot', sort: 'viral', wndow: 'day'}
+          resImageData: []
         };
+
+        // binding handleSubmit method with this context
         this.handleSubmit = this.handleSubmit.bind(this);
       }
 
+      // invoking retrieveImages method
     componentDidMount()
     {
       this.isInvoked++;
-      console.log('invoked');
       if(this.isInvoked === 1)
       {
         this.retrieveImages('hot', 'viral', 'day');
@@ -39,14 +41,19 @@ export class Thumbnail extends React.Component<{},state>{
     }
 
   
-
+    // method to fetch images from api with defualt params
     retrieveImages (section: string, sort: string, wndow: string)
     {
+        // updating the isFetching state true for showing loading animation
         this.setState({isFetching: true});
+        
+        // flushing the images array
         this.images.splice(0, this.images.length);
 
+        // making api call
         ThumbnailService.retrieveAllThumbnails(section, sort, wndow).then((res: Image) => {
-            console.log(res);
+            
+           // if data received and length is greater than zero
             if(res.data && res.data.data.length > 0)
                                             { 
                                               this.images = res.data.data;
@@ -58,9 +65,12 @@ export class Thumbnail extends React.Component<{},state>{
         });
     }
 
+    // modifying received data and updating the state of resImageData
   handleData(images: ImageDetails[])
   {
+    // flushing the imageData array
     this.imageData.splice(0,this.imageData.length);
+
     images  // filtering elements don't have images
           .filter(x => x.images_count > 0) 
           .map(y => 
@@ -77,6 +87,8 @@ export class Thumbnail extends React.Component<{},state>{
                             });
                   }                               
               );   
+              
+              // updating the state with fresh data
               this.setState({resImageData: this.imageData, isFetching: false});
               
   }
@@ -98,6 +110,7 @@ export class Thumbnail extends React.Component<{},state>{
     return '';
   }
 
+  // capturing the form values
   handleSubmit(e: any)
   {
   e.preventDefault();
@@ -109,10 +122,8 @@ export class Thumbnail extends React.Component<{},state>{
   const section: string = target.section.value; // typechecks!
   const sort: string = target.sort.value; // typechecks!
   const wndow: string = target.wndow.value; // typechecks!
-  console.log(section+' '+sort+' '+wndow);
-  this.setState({
-    query: {section: section, sort: sort, wndow: wndow}
-  } );
+  
+  // invoking the retrieveImages method with user selected filters
   this.retrieveImages(section, sort, wndow);
   }
 
