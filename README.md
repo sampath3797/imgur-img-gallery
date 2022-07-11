@@ -1,5 +1,5 @@
-# IMGUR GALLERY
-`IMGUR GALLERY` This application facilitates Browsing Imgur Gallery Images. User can filter images as per section like hot, top, user and user can sort images like viral, top and time, similarly user can select window like day, week, month, year , all. The image resource api is provided by api.imgur.com
+# IMGUR IMAGES GALLERY
+`IMGUR IMAGES GALLERY` This application facilitates Browsing Imgur Gallery Images. User can filter images as per section like hot, top, user and user can sort images like viral, top and time, similarly user can select window like day, week, month, year , all. The image resource api is provided by api.imgur.com
 
 
 Contents
@@ -37,7 +37,7 @@ I wanted a simple web application that allows user to:
 
 ```bash
 > git clone https://github.com/sampath3797/imgur-img-gallery.git
-> cd imgur-gallery
+> cd imgur-img-gallery
 > npm install
 ```
 once all npm packages are installed then give npm start to run app in development mode.
