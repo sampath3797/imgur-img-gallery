@@ -160,8 +160,12 @@ export class Thumbnail extends React.Component<{},state>{
                     <option value="year">Year</option>
                     <option value="all">All</option>
                     </select>
-                    <Button type="submit" variant="contained" disabled={this.state.isFetching}>Load Images</Button>Total images: {this.state.resImageData.length}
+                    &nbsp;&nbsp;&nbsp;
+                    <Button type="submit" variant="contained" disabled={this.state.isFetching}>Load Images</Button>
+                    &nbsp;&nbsp;&nbsp;
+                    Total images: {this.state.resImageData.length}
                 </form>
+                
                 {
                   this.state.isFetching &&
                   <Box sx={{ width: '100%', height: '15%'}}>

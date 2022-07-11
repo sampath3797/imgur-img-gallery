@@ -9,10 +9,10 @@ Contents
  * [Technology used](#Technology-used)
  * [Installation](#installation)
  * [Usage](#usage)
- * [Test and Build](#test-build)
+ 
  * [Git Integration](#git-integration)
  * [Configuration](#configuration)
- * [Output Structure](#output-structure)
+ 
  * [Future Planning](#future-planning)
 
 ### Why?
