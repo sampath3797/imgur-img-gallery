@@ -52,7 +52,7 @@ By default section selected as hot, sort selected as top, window selected as day
 ### Git Integration
 ---
 
-This web application tool is git-integrated for easy to share among developers and maintain, This repository having a `.gitignore` file. It excludes `node_modules`, `.angular` etc which are not required for tracking and sync with github remote repository.
+This web application tool is git-integrated for easy to share among developers and maintain, This repository having a `.gitignore` file. It excludes `node_modules` etc which are not required for tracking and sync with github remote repository.
 
 
 ### Configuration

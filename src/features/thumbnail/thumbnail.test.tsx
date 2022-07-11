@@ -3,7 +3,7 @@ import { fireEvent, getByRole, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Thumbnail } from './Thumbnail';
 
-test('test whether section combobox default value is hot',() => {
+test('test dropdown default values is hot,vial and day',() => {
     render(<Thumbnail />) 
     expect(screen.getByRole("section")).toHaveDisplayValue("Hot");
     expect(screen.getByRole("sort")).toHaveDisplayValue("Viral");
